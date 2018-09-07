@@ -1,0 +1,4 @@
+{
+	"title": "项设置",
+	"content": "<i class=\"icon fa fa-tag\"></i><form><div class=\"form-group\"><label for=\"content\">内容:</label><input type=\"text\" v-model=\"item.content\" class=\"form-control\" id=\"content\" placeholder=\"输入内容\"></div></form>"
+}

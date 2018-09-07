@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="sss_xks">
+    <!-- <link rel="icon" href=""> -->
+    <title>TODO List Master</title>
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]>
+		<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<nav class="navbar bg-dark navbar-dark" id="navbar">
+		<span class="navbar-brand">TODO List Master</span>
+		<button class="navbar-toggler" type="button" @click="onToggleNavbar()">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<transition name="collapse">
+		<div class="navbar-collapse" v-if="show" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<button class="nav-link" @click="onImport()">Import</button>
+				</li>
+				<li class="nav-item">
+					<button class="nav-link" @click="onExport()">Export</button>
+				</li>
+			</ul>
+		</div>
+		<transition>
+	</nav>
+
+	<div class="container" id="main">
+		<div>
+			<h2>TODO List</h2>
+			<ul class="list-group">
+			<transition-group tag="ul" name="list" class="list-group">
+				<li v-bind:key="item.id" class="list-group-item" v-for="(item, index) in todoList" @dblclick="onOpenSettings(index)">{{ item.content }}</li>
+			</transition-group>
+			</ul>
+			<p class="form-inline">
+				<input @keydown.enter="onAddItem" type="text" class="form-control" id="add-item" v-model="newItem" placeholder="添加项"></input>
+			</p>
+		</div>
+		<modal></modal>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+	<script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
