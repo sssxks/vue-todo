@@ -30,7 +30,8 @@ function Tag (name,color) {
 	}
 }
 function Item (content) {
-	this.tag = 'none';
+	this.status = false;
+	this.tags = [];
 	this.content = content;
 }
 
