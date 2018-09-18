@@ -35,6 +35,12 @@ function Item (content) {
 	this.content = content;
 }
 
+/*Vue.component('modals',{
+	props:{
+		
+	}
+})*/
+
 Vue.component('modal', {
 	props: {
   		remote: String,
