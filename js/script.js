@@ -38,6 +38,12 @@ function Item (content) {
 /*Vue.component('modals',{
 	props:{
 		
+	},
+	data: {
+		modals:[]
+	},
+	methods: {
+	
 	}
 })*/
 
@@ -111,7 +117,7 @@ Vue.component('modal', {
 							} else if(statusTxt == "error"){
 								console.log('cannot load modal');
 							}
-						}
+						});
 					} else if (options.content) {
 						if (typeof options.content) == 'string') {
 							try {
