@@ -119,7 +119,7 @@ Vue.component('modal', {
 							}
 						});
 					} else if (options.content) {
-						if (typeof options.content) == 'string') {
+						if (typeof options.content == 'string') {
 							try {
 								var data = JSON.parse(options.content);
 							} catch (e) {
