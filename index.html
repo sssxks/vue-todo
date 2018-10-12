@@ -50,7 +50,7 @@
 				<input @keydown.enter="onAddItem" type="text" class="form-control" id="add-item" v-model="newItem" placeholder="添加项"></input>
 			</p>
 		</div>
-		<modal></modal>
+		<modals v-bind:modals="modals"></modals>
 	</div>
 
 	<script src="js/jquery.min.js"></script>
